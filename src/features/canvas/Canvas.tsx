@@ -114,11 +114,7 @@ const CanvasContent = () => {
 };
 
 const Canvas = () => {
-  return (
-    <ReactFlowProvider>
-      <CanvasContent />
-    </ReactFlowProvider>
-  );
+  return <CanvasContent />;
 };
 
 export default Canvas;

@@ -13,7 +13,7 @@ import {
   Download,
   Upload
 } from 'lucide-react';
-import { useAppStore, useProjectInfo } from '@/store';
+import { useAppStore } from '@/store';
 import { useReactFlow } from '@xyflow/react';
 import { useCallback } from 'react';
 
@@ -32,7 +32,9 @@ const Toolbar = () => {
     updateLastSaved 
   } = useAppStore();
   
-  const projectInfo = useProjectInfo();
+  const projectName = useAppStore((state) => state.projectName);
+  const isDirty = useAppStore((state) => state.isDirty);
+  const isLoading = useAppStore((state) => state.isLoading);
   const { zoomIn, zoomOut, fitView, toObject } = useReactFlow();
 
   const handleUndo = useCallback(() => {
@@ -72,17 +74,17 @@ const Toolbar = () => {
     const url = URL.createObjectURL(dataBlob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${projectInfo.name}.json`;
+    link.download = `${projectName}.json`;
     link.click();
     URL.revokeObjectURL(url);
-  }, [toObject, projectInfo.name]);
+  }, [toObject, projectName]);
 
   return (
     <div className="h-14 bg-card border-b border-border px-4 flex items-center justify-between">
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2">
-          <h1 className="text-lg font-semibold text-foreground">{projectInfo.name}</h1>
-          {projectInfo.isDirty && (
+          <h1 className="text-lg font-semibold text-foreground">{projectName}</h1>
+          {isDirty && (
             <Badge variant="outline" className="text-xs">
               Unsaved
             </Badge>
@@ -96,7 +98,7 @@ const Toolbar = () => {
             variant="outline"
             size="sm"
             onClick={handleSave}
-            disabled={!projectInfo.isDirty}
+            disabled={!isDirty}
           >
             <Save className="w-4 h-4 mr-1" />
             Save

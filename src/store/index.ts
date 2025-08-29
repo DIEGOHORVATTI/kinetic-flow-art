@@ -31,11 +31,3 @@ export const useSelectedNode = () => {
     return selectedId ? state.nodes.find(node => node.id === selectedId) : null;
   });
 };
-export const useProjectInfo = () => useAppStore((state) => ({
-  id: state.projectId,
-  name: state.projectName,
-  description: state.projectDescription,
-  isDirty: state.isDirty,
-  isLoading: state.isLoading,
-  lastSaved: state.lastSaved
-}));
