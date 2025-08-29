@@ -1,73 +1,212 @@
-# Welcome to your Lovable project
+# Editor No-Code com React Flow e Zustand
 
-## Project info
+## 📋 Introdução
 
-**URL**: https://lovable.dev/projects/065c36a9-1577-46ff-8b20-1d875db8940a
+Este projeto implementa um editor visual no-code utilizando tecnologias modernas como React, React Flow para a interface gráfica, Zustand para gerenciamento de estado e Tailwind CSS para estilização. A arquitetura foi projetada para ser escalável, performática e de fácil manutenção.
 
-## How can I edit this code?
+## 🏗️ Arquitetura do Projeto
 
-There are several ways of editing your application.
+text
 
-**Use Lovable**
+/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/          # Componentes de UI reutilizáveis
+│   ├── features/           # Módulos de negócio autocontidos
+│   │   ├── canvas/         # Lógica e componentes do canvas
+│   │   ├── node-palette/   # Paleta de nós arrastáveis
+│   │   ├── properties-panel/ # Painel de propriedades
+│   │   └── ...            # Outras funcionalidades
+│   ├── hooks/              # Hooks customizados
+│   ├── lib/                # Utilitários e configurações
+│   ├── pages/              # Componentes de página
+│   ├── store/              # Gerenciamento de estado com Zustand
+│   └── types/              # Definições TypeScript
+├── package.json
+├── tsconfig.json
+└── vite.config.js
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/065c36a9-1577-46ff-8b20-1d875db8940a) and start prompting.
+## 🎯 Princípios Orientadores
 
-Changes made via Lovable will be committed automatically to this repo.
+*   Modularidade: Funcionalidades organizadas em features independentes
+    
+*   Fonte Única de Verdade: Estado centralizado com Zustand
+    
+*   Performance: Otimizações para experiência fluida
+    
+*   Extensibilidade: Arquitetura baseada em plugins
+    
 
-**Use your preferred IDE**
+## 🚀 Tecnologias Utilizadas
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+*   React 18 + Vite
+    
+*   React Flow para canvas visual
+    
+*   Zustand para gerenciamento de estado
+    
+*   Tailwind CSS para estilização
+    
+*   TypeScript para tipagem estática
+    
+*   shadcn/ui para componentes de UI
+    
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📦 Instalação e Uso
 
-Follow these steps:
+bash
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+\# Instalar dependências
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+\# Executar em modo desenvolvimento
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+\# Build para produção
+npm run build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+\# Preview da build
+npm run preview
 
-**Use GitHub Codespaces**
+## 🎨 Funcionalidades Principais
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Canvas Interativo
 
-## What technologies are used for this project?
+*   Arraste e solte de componentes
+    
+*   Conexão visual entre nós
+    
+*   Zoom e navegação fluida
+    
+*   Nós customizados com React
+    
 
-This project is built with:
+### Gerenciamento de Estado
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+*   Estado controlado do React Flow
+    
+*   Slices organizados por domínio
+    
+*   Otimizações de performance com seletores
+    
+*   Middleware (devtools, persist, immer)
+    
 
-## How can I deploy this project?
+### Interface de Usuário
 
-Simply open [Lovable](https://lovable.dev/projects/065c36a9-1577-46ff-8b20-1d875db8940a) and click on Share -> Publish.
+*   Paleta de componentes arrastáveis
+    
+*   Painel de propriedades dinâmico
+    
+*   Barra de ferramentas com undo/redo
+    
+*   Design responsivo com Tailwind CSS
+    
 
-## Can I connect a custom domain to my Lovable project?
+## 🔧 Estrutura de Estado
 
-Yes, you can!
+O estado da aplicação é organizado em slices:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+typescript
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+// CanvasSlice: Nós, arestas e viewport
+// SelectionSlice: Elementos selecionados
+// HistorySlice: Funcionalidade undo/redo
+// ProjectSlice: Metadados do projeto
+
+## 📡 Integração com Backend
+
+### Esquema de Serialização
+
+typescript
+
+interface WorkflowSchema {
+  id: string;
+  nodes: Array<{
+    id: string;
+    type: string;
+    data: Record<string, any\>;
+  }\>;
+  edges: Array<{
+    source: string;
+    target: string;
+    sourceHandle?: string;
+    targetHandle?: string;
+  }\>;
+}
+
+### API Endpoints
+
+*   `POST /api/workflows` - Criar fluxo
+    
+*   `GET /api/workflows/{id}` - Buscar fluxo
+    
+*   `PUT /api/workflows/{id}` - Atualizar fluxo
+    
+*   `POST /api/workflows/{id}/execute` - Executar fluxo
+    
+
+## ⚡ Otimizações de Performance
+
+*   Memoização de componentes com `React.memo`
+    
+*   Seletores granulares no Zustand
+    
+*   Virtualização para grafos grandes
+    
+*   Agrupamento de ações de undo/redo
+    
+*   Estilos CSS otimizados
+    
+
+## 🔌 Arquitetura de Plugins
+
+Sistema extensível para adição de novos tipos de nós:
+
+typescript
+
+interface NodePlugin {
+  type: string;
+  component: React.ComponentType;
+  paletteComponent: React.ComponentType;
+  propertiesComponent: React.ComponentType;
+  initialData: object;
+}
+
+## 📋 Roadmap de Desenvolvimento
+
+### Fase 1: Fundação
+
+*   Configuração da estrutura do projeto
+    
+*   Store básico do Zustand
+    
+*   Canvas React Flow controlado
+    
+
+### Fase 2: Núcleo do Editor
+
+*   Primeiro nó customizado
+    
+*   Funcionalidade drag-and-drop
+    
+*   Painel de propriedades dinâmico
+    
+
+### Fase 3: Funcionalidades Avançadas
+
+*   Save/restore com API mock
+    
+*   Undo/redo functionality
+    
+*   Validação de conexões
+    
+
+### Fase 4: Produção
+
+*   Otimizações de performance
+    
+*   Arquitetura de plugins
+    
+*   Testes e documentação
