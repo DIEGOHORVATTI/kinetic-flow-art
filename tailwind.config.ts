@@ -24,25 +24,37 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				'canvas-background': 'hsl(var(--canvas-background))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))',
+					variant: 'hsl(var(--primary-variant))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
+				accent: {
+					DEFAULT: 'hsl(var(--accent))',
+					foreground: 'hsl(var(--accent-foreground))',
+					glow: 'hsl(var(--accent-glow))'
+				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
 				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
 					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -51,6 +63,16 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				node: {
+					bg: 'hsl(var(--node-bg))',
+					border: 'hsl(var(--node-border))',
+					selected: 'hsl(var(--node-selected))',
+					hover: 'hsl(var(--node-hover))'
+				},
+				handle: {
+					bg: 'hsl(var(--handle-bg))',
+					border: 'hsl(var(--handle-border))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -62,6 +84,24 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-subtle': 'var(--gradient-subtle)',
+				'gradient-node': 'var(--gradient-node)'
+			},
+			boxShadow: {
+				'sm': 'var(--shadow-sm)',
+				'md': 'var(--shadow-md)',
+				'lg': 'var(--shadow-lg)',
+				'glow': 'var(--shadow-glow)',
+				'node': 'var(--shadow-node)',
+				'node-selected': 'var(--shadow-node-selected)'
+			},
+			transitionProperty: {
+				'smooth': 'var(--transition-smooth)',
+				'fast': 'var(--transition-fast)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -1,0 +1,80 @@
+/* React Flow custom styling */
+.react-flow__node {
+  font-family: inherit;
+}
+
+.react-flow__handle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: hsl(var(--handle-bg));
+  border-color: hsl(var(--handle-border));
+  transition: all 0.2s ease;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+}
+
+.react-flow__handle.connectionindicator {
+  background: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+}
+
+.react-flow__edge-path {
+  stroke: hsl(var(--primary));
+  stroke-width: 2;
+}
+
+.react-flow__edge.animated path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+.react-flow__edge.selected path {
+  stroke: hsl(var(--accent));
+  stroke-width: 3;
+}
+
+.react-flow__connection-line {
+  stroke: hsl(var(--primary));
+  stroke-width: 2;
+}
+
+.react-flow__controls {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+}
+
+.react-flow__controls button {
+  background: transparent;
+  border: none;
+  color: hsl(var(--foreground));
+  transition: all 0.2s ease;
+}
+
+.react-flow__controls button:hover {
+  background: hsl(var(--muted));
+  color: hsl(var(--primary));
+}
+
+.react-flow__minimap {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+}
+
+.react-flow__panel {
+  color: hsl(var(--foreground));
+}
+
+@keyframes dashdraw {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
