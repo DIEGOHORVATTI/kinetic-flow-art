@@ -6,8 +6,7 @@ Este projeto implementa um editor visual no-code utilizando tecnologias modernas
 
 ## 🏗️ Arquitetura do Projeto
 
-text
-
+```text
 /
 ├── public/
 ├── src/
@@ -26,7 +25,7 @@ text
 ├── package.json
 ├── tsconfig.json
 └── vite.config.js
-
+```
 ## 🎯 Princípios Orientadores
 
 *   Modularidade: Funcionalidades organizadas em features independentes
@@ -108,12 +107,12 @@ npm run preview
 
 O estado da aplicação é organizado em slices:
 
-typescript
-
+```typescript
 // CanvasSlice: Nós, arestas e viewport
 // SelectionSlice: Elementos selecionados
 // HistorySlice: Funcionalidade undo/redo
 // ProjectSlice: Metadados do projeto
+```
 
 ## 📡 Integração com Backend
 
@@ -135,17 +134,6 @@ interface WorkflowSchema {
     targetHandle?: string;
   }\>;
 }
-
-### API Endpoints
-
-*   `POST /api/workflows` - Criar fluxo
-    
-*   `GET /api/workflows/{id}` - Buscar fluxo
-    
-*   `PUT /api/workflows/{id}` - Atualizar fluxo
-    
-*   `POST /api/workflows/{id}/execute` - Executar fluxo
-    
 
 ## ⚡ Otimizações de Performance
 
