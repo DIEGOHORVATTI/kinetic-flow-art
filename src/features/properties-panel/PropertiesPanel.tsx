@@ -6,10 +6,12 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import { Trash2, Settings } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useAppStore, useSelectedNode } from '@/store';
 import { useCallback } from 'react';
 
 const PropertiesPanel = () => {
+  const { t } = useTranslation();
   const selectedNode = useSelectedNode();
   const { updateNodeData, deleteNode, clearSelection } = useAppStore();
 

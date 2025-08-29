@@ -13,11 +13,14 @@ import {
   Download,
   Upload
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useAppStore } from '@/store';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useReactFlow } from '@xyflow/react';
 import { useCallback } from 'react';
 
 const Toolbar = () => {
+  const { t } = useTranslation();
   const { 
     canUndo, 
     canRedo, 

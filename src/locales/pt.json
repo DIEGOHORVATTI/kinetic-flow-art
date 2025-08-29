@@ -1,0 +1,102 @@
+{
+  "editor": {
+    "title": "Editor Visual",
+    "toolbar": {
+      "save": "Salvar",
+      "undo": "Desfazer",
+      "redo": "Refazer",
+      "zoomIn": "Ampliar",
+      "zoomOut": "Reduzir",
+      "fitView": "Ajustar Tela",
+      "export": "Exportar",
+      "unsaved": "Não Salvo"
+    },
+    "palette": {
+      "title": "Componentes",
+      "subtitle": "Arraste os componentes para o canvas",
+      "input": "Entrada",
+      "process": "Processo",
+      "condition": "Condição",
+      "output": "Saída",
+      "email": "Email",
+      "api": "Chamada API"
+    },
+    "properties": {
+      "title": "Propriedades",
+      "noSelection": "Nenhuma Seleção",
+      "noSelectionDesc": "Selecione um nó para visualizar e editar suas propriedades",
+      "basicSettings": "Configurações Básicas",
+      "name": "Nome",
+      "description": "Descrição",
+      "position": "Posição e Tamanho",
+      "xPosition": "Posição X",
+      "yPosition": "Posição Y",
+      "emailSettings": "Configurações de Email",
+      "emailTo": "Para",
+      "emailSubject": "Assunto",
+      "emailBody": "Corpo",
+      "conditionSettings": "Configurações de Condição",
+      "conditionLogic": "Lógica da Condição",
+      "conditionDesc": "Defina a condição que determina qual caminho seguir",
+      "apiSettings": "Configurações da API",
+      "apiUrl": "URL",
+      "apiMethod": "Método",
+      "apiHeaders": "Cabeçalhos",
+      "apiBody": "Corpo da Requisição"
+    },
+    "nodes": {
+      "input": {
+        "defaultLabel": "Início",
+        "defaultDescription": "Ponto de partida do fluxo"
+      },
+      "process": {
+        "defaultLabel": "Processar",
+        "defaultDescription": "Transforme seus dados"
+      },
+      "condition": {
+        "defaultLabel": "Condição",
+        "defaultDescription": "Tome uma decisão"
+      },
+      "output": {
+        "defaultLabel": "Saída",
+        "defaultDescription": "Ponto final do fluxo"
+      },
+      "email": {
+        "defaultLabel": "Enviar Email",
+        "defaultDescription": "Enviar uma notificação por email",
+        "validation": {
+          "emailRequired": "Endereço de email é obrigatório",
+          "subjectRequired": "Assunto é obrigatório",
+          "invalidEmail": "Por favor, insira um endereço de email válido"
+        },
+        "execution": {
+          "sending": "Enviando email...",
+          "success": "Email enviado com sucesso",
+          "error": "Falha ao enviar email"
+        }
+      },
+      "api": {
+        "defaultLabel": "Chamada API",
+        "defaultDescription": "Fazer requisição HTTP",
+        "validation": {
+          "urlRequired": "URL é obrigatória",
+          "invalidUrl": "Por favor, insira uma URL válida"
+        }
+      }
+    }
+  },
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "email": "Por favor, insira um endereço de email válido",
+    "url": "Por favor, insira uma URL válida",
+    "minLength": "Comprimento mínimo é {{count}} caracteres",
+    "maxLength": "Comprimento máximo é {{count}} caracteres"
+  },
+  "actions": {
+    "execute": "Executar",
+    "validate": "Validar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "delete": "Excluir"
+  }
+}

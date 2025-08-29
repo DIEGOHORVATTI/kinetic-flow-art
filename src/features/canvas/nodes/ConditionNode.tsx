@@ -1,10 +1,16 @@
 import { memo, useCallback } from 'react';
 import { Handle, Position, NodeProps } from '@xyflow/react';
 import { Card } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { GitBranch } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { useAppStore } from '@/store';
+import ExecuteNodeButton from '@/components/ExecuteNodeButton';
+import { validateNode } from '@/lib/business-rules';
 
 const ConditionNode = memo(({ id, data, selected }: NodeProps) => {
+  const { t } = useTranslation();
   const updateNodeData = useAppStore((state) => state.updateNodeData);
 
   const handleLabelChange = useCallback(
@@ -13,6 +19,20 @@ const ConditionNode = memo(({ id, data, selected }: NodeProps) => {
     },
     [id, updateNodeData]
   );
+
+  const handleConditionChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      updateNodeData(id, { condition: e.target.value });
+    },
+    [id, updateNodeData]
+  );
+
+  const validation = validateNode({ 
+    id, 
+    type: 'condition', 
+    data: { ...data, label: String(data.label || t('editor.nodes.condition.defaultLabel')) }, 
+    position: { x: 0, y: 0 } 
+  });
 
   return (
     <Card 
@@ -29,10 +49,10 @@ const ConditionNode = memo(({ id, data, selected }: NodeProps) => {
           </div>
           <input
             type="text"
-            value={String(data.label || 'Condition')}
+            value={String(data.label || t('editor.nodes.condition.defaultLabel'))}
             onChange={handleLabelChange}
             className="font-medium text-sm bg-transparent border-none outline-none flex-1 text-foreground"
-            placeholder="Node name"
+            placeholder={t('editor.properties.name')}
           />
         </div>
         {data.description && (

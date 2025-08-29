@@ -4,8 +4,9 @@ import { createCanvasSlice, CanvasSlice } from './slices/canvasSlice';
 import { createSelectionSlice, SelectionSlice } from './slices/selectionSlice';
 import { createHistorySlice, HistorySlice } from './slices/historySlice';
 import { createProjectSlice, ProjectSlice } from './slices/projectSlice';
+import { createExecutionSlice, ExecutionSlice } from './slices/executionSlice';
 
-export type AppStore = CanvasSlice & SelectionSlice & HistorySlice & ProjectSlice;
+export type AppStore = CanvasSlice & SelectionSlice & HistorySlice & ProjectSlice & ExecutionSlice;
 
 export const useAppStore = create<AppStore>()(
   devtools(
@@ -14,6 +15,7 @@ export const useAppStore = create<AppStore>()(
       ...createSelectionSlice(set, get, api),
       ...createHistorySlice(set, get, api),
       ...createProjectSlice(set, get, api),
+      ...createExecutionSlice(set, get, api),
     }),
     {
       name: 'no-code-editor-store',

@@ -1,0 +1,102 @@
+{
+  "editor": {
+    "title": "Visual Editor",
+    "toolbar": {
+      "save": "Save",
+      "undo": "Undo",
+      "redo": "Redo",
+      "zoomIn": "Zoom In",
+      "zoomOut": "Zoom Out",
+      "fitView": "Fit View",
+      "export": "Export",
+      "unsaved": "Unsaved"
+    },
+    "palette": {
+      "title": "Components",
+      "subtitle": "Drag components to the canvas",
+      "input": "Input",
+      "process": "Process",
+      "condition": "Condition",
+      "output": "Output",
+      "email": "Email",
+      "api": "API Call"
+    },
+    "properties": {
+      "title": "Properties",
+      "noSelection": "No Selection",
+      "noSelectionDesc": "Select a node to view and edit its properties",
+      "basicSettings": "Basic Settings",
+      "name": "Name",
+      "description": "Description",
+      "position": "Position & Size",
+      "xPosition": "X Position",
+      "yPosition": "Y Position",
+      "emailSettings": "Email Settings",
+      "emailTo": "To",
+      "emailSubject": "Subject",
+      "emailBody": "Body",
+      "conditionSettings": "Condition Settings",
+      "conditionLogic": "Condition Logic",
+      "conditionDesc": "Define the condition that determines which path to take",
+      "apiSettings": "API Settings",
+      "apiUrl": "URL",
+      "apiMethod": "Method",
+      "apiHeaders": "Headers",
+      "apiBody": "Request Body"
+    },
+    "nodes": {
+      "input": {
+        "defaultLabel": "Start",
+        "defaultDescription": "Workflow starting point"
+      },
+      "process": {
+        "defaultLabel": "Process",
+        "defaultDescription": "Transform your data"
+      },
+      "condition": {
+        "defaultLabel": "Condition",
+        "defaultDescription": "Make a decision"
+      },
+      "output": {
+        "defaultLabel": "Output",
+        "defaultDescription": "Workflow end point"
+      },
+      "email": {
+        "defaultLabel": "Send Email",
+        "defaultDescription": "Send an email notification",
+        "validation": {
+          "emailRequired": "Email address is required",
+          "subjectRequired": "Subject is required",
+          "invalidEmail": "Please enter a valid email address"
+        },
+        "execution": {
+          "sending": "Sending email...",
+          "success": "Email sent successfully",
+          "error": "Failed to send email"
+        }
+      },
+      "api": {
+        "defaultLabel": "API Call",
+        "defaultDescription": "Make HTTP request",
+        "validation": {
+          "urlRequired": "URL is required",
+          "invalidUrl": "Please enter a valid URL"
+        }
+      }
+    }
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email address",
+    "url": "Please enter a valid URL",
+    "minLength": "Minimum length is {{count}} characters",
+    "maxLength": "Maximum length is {{count}} characters"
+  },
+  "actions": {
+    "execute": "Execute",
+    "validate": "Validate",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete"
+  }
+}
